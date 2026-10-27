@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="mk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fa">
+  <meta name="description" content="Сметководствени, даночни и деловни услуги за компании што сакаат сигурно да напредуваат. Запознајте ја Марија Столеска.">
+  <title>Marija Stoleska | Сметководство и деловно советување</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f5f7fa;
+      --white: #ffffff;
+      --ink: #1c2f46;
+      --muted: #697789;
+      --line: #d9e0e8;
+      --blue: #234e78;
+      --blue-deep: #163550;
+      --gold: #9a742d;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 86px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 15px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button { font: inherit; }
+    .wrap { width: min(1180px, calc(100% - 64px)); margin-inline: auto; }
+    .eyebrow { display: flex; align-items: center; gap: 12px; color: var(--gold); font-size: 11px; font-weight: 700; letter-spacing: 1.7px; text-transform: uppercase; }
+    .eyebrow::before { width: 26px; height: 1px; background: currentColor; content: ""; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2 { font-family: var(--serif); font-weight: 400; letter-spacing: 0; }
+    h2 { margin-bottom: 18px; font-size: clamp(36px, 4vw, 52px); line-height: 1.13; }
+    .section-intro { max-width: 530px; color: var(--muted); font-size: 16px; }
+
+    .topbar { position: sticky; z-index: 20; top: 0; border-bottom: 1px solid rgba(28,47,70,.09); background: rgba(245,247,250,.96); backdrop-filter: blur(14px); }
+    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .brand-mark { width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid #c9b77d; color: var(--blue); font-family: var(--serif); font-size: 17px; }
+    .brand-name { display: grid; color: var(--ink); font-family: var(--serif); font-size: 16px; line-height: 1.25; }
+    .brand-name small { margin-top: 3px; color: var(--muted); font-family: var(--sans); font-size: 9px; font-weight: 600; letter-spacing: 1.35px; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: clamp(18px, 2.4vw, 34px); }
+    .nav-links a { color: #465b70; font-size: 12px; font-weight: 600; transition: color .2s ease; }
+    .nav-links a:hover { color: var(--gold); }
+    .button { min-height: 46px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 0 20px; border: 1px solid var(--blue); background: var(--blue); color: white; font-size: 12px; font-weight: 700; transition: background .2s ease, transform .2s ease; }
+    .button:hover { transform: translateY(-2px); background: var(--blue-deep); }
+    .menu-toggle { display: none; width: 42px; height: 42px; border: 1px solid var(--line); background: transparent; color: var(--ink); cursor: pointer; }
+
+    .hero { padding: 48px 0 70px; }
+    .hero-grid { min-height: 550px; display: grid; grid-template-columns: .91fr 1.09fr; align-items: center; gap: 58px; }
+    .hero-copy { padding: 25px 0 30px; animation: rise .75s both; }
+    .hero h1 { max-width: 550px; margin: 22px 0 22px; font-size: clamp(49px, 6vw, 76px); line-height: 1.03; }
+    .hero h1 span { color: var(--blue); font-style: italic; }
+    .hero-copy > p { max-width: 430px; margin-bottom: 30px; color: var(--muted); font-size: 16px; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; }
+    .text-link { display: inline-flex; align-items: center; gap: 9px; color: var(--blue); font-size: 12px; font-weight: 700; }
+    .text-link span { font-size: 18px; transition: transform .2s ease; }
+    .text-link:hover span { transform: translateX(4px); }
+    .hero-visual { position: relative; min-height: 495px; animation: rise .85s .1s both; }
+    .hero-image { position: absolute; inset: 0 0 22px 25px; width: calc(100% - 25px); height: calc(100% - 22px); object-fit: cover; object-position: 52% center; }
+    .image-frame { position: absolute; inset: 18px 18px 0 0; border: 1px solid #c9b77d; pointer-events: none; }
+    .image-note { position: absolute; right: 0; bottom: 0; display: flex; align-items: center; gap: 13px; padding: 14px 18px; background: var(--white); }
+    .image-note b { color: var(--blue); font-family: var(--serif); font-size: 26px; font-weight: 400; }
+    .image-note span { max-width: 130px; color: var(--muted); font-size: 10px; line-height: 1.4; }
+    .trust-strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .trust-inner { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .trust-item { display: flex; align-items: center; gap: 12px; color: #506174; font-size: 12px; font-weight: 600; }
+    .trust-dot { width: 7px; height: 7px; background: var(--gold); border-radius: 50%; }
+
+    .about { padding: 112px 0; }
+    .about-grid { display: grid; grid-template-columns: .84fr 1.16fr; gap: 100px; align-items: start; }
+    .about-aside { padding-top: 11px; }
+    .about-aside .eyebrow { margin-bottom: 20px; }
+    .about-aside h2 { max-width: 410px; }
+    .about-copy { padding-top: 8px; }
+    .about-copy p { margin-bottom: 18px; color: var(--muted); }
+    .signature { display: flex; align-items: center; gap: 14px; margin-top: 26px; }
+    .signature-rule { width: 38px; height: 1px; background: var(--gold); }
+    .signature strong { display: block; color: var(--blue); font-family: var(--serif); font-size: 17px; font-weight: 500; }
+    .signature small { color: var(--muted); font-size: 10px; letter-spacing: .8px; text-transform: uppercase; }
+
+    .services { padding: 100px 0 108px; background: #eaf0f5; }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 35px; margin-bottom: 45px; }
+    .section-heading .eyebrow { margin-bottom: 17px; }
+    .section-heading h2 { max-width: 510px; margin-bottom: 0; }
+    .section-heading > p { max-width: 345px; margin: 0 0 4px; color: var(--muted); font-size: 14px; }
+    .service-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid #cfd9e3; border-left: 1px solid #cfd9e3; }
+    .service { min-height: 210px; padding: 25px 23px 23px; border-right: 1px solid #cfd9e3; border-bottom: 1px solid #cfd9e3; transition: background .2s ease; }
+    .service:hover { background: rgba(255,255,255,.72); }
+    .service-number { display: block; margin-bottom: 28px; color: var(--gold); font-family: var(--serif); font-size: 15px; }
+    .service h3 { margin-bottom: 9px; color: var(--blue); font-family: var(--serif); font-size: 20px; font-weight: 500; }
+    .service p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.65; }
+
+    .difference { padding: 105px 0; background: var(--blue-deep); color: #f5f7fa; }
+    .difference-grid { display: grid; grid-template-columns: .85fr 1.15fr; align-items: start; gap: 100px; }
+    .difference .eyebrow { color: #dfbd6b; }
+    .difference h2 { max-width: 420px; margin-top: 19px; }
+    .difference-lead { max-width: 375px; color: #c6d1de; font-size: 14px; }
+    .reasons { border-top: 1px solid rgba(255,255,255,.22); }
+    .reason { display: grid; grid-template-columns: 44px 1fr; gap: 14px; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,.22); }
+    .reason-number { color: #dfbd6b; font-family: var(--serif); font-size: 16px; }
+    .reason h3 { margin: 0 0 5px; font-family: var(--serif); font-size: 20px; font-weight: 400; }
+    .reason p { max-width: 470px; margin: 0; color: #c6d1de; font-size: 12px; }
+
+    .contact { padding: 90px 0; background: #eaf0f5; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 70px; }
+    .contact h2 { max-width: 500px; margin: 18px 0; }
+    .contact-copy > p { max-width: 450px; margin-bottom: 0; color: var(--muted); }
+    .contact-details { display: grid; gap: 0; border-top: 1px solid #cfd9e3; }
+    .contact-row { display: grid; grid-template-columns: 100px 1fr; gap: 15px; padding: 17px 0; border-bottom: 1px solid #cfd9e3; }
+    .contact-row span { color: var(--muted); font-size: 11px; }
+    .contact-row a { width: fit-content; color: var(--blue); font-size: 14px; font-weight: 600; overflow-wrap: anywhere; }
+    .contact-row a:hover { color: var(--gold); }
+    .contact-action { margin-top: 25px; }
+
+    footer { padding: 27px 0; background: var(--blue-deep); color: #c6d1de; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-brand { color: white; font-family: var(--serif); font-size: 15px; }
+    .footer-inner small { font-size: 10px; }
+    .back-top { color: white; font-size: 11px; }
+
+    @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+    @media (max-width: 900px) {
+      .wrap { width: min(100% - 44px, 720px); }
+      .nav { min-height: 72px; }
+      .nav-links { gap: 15px; }
+      .nav-links a { font-size: 11px; }
+      .hero-grid { min-height: 460px; gap: 35px; }
+      .hero-visual { min-height: 400px; }
+      .hero h1 { font-size: clamp(48px, 7vw, 64px); }
+      .about-grid, .difference-grid { gap: 55px; }
+      .service-grid { grid-template-columns: repeat(2, 1fr); }
+      .service { min-height: 185px; }
+    }
+    @media (max-width: 650px) {
+      html { scroll-padding-top: 72px; }
+      .wrap { width: calc(100% - 40px); }
+      .nav { min-height: 68px; }
+      .menu-toggle { display: grid; place-items: center; }
+      .nav-links { position: absolute; top: 68px; right: 0; left: 0; display: none; align-items: stretch; gap: 0; padding: 8px 20px 15px; border-bottom: 1px solid var(--line); background: var(--paper); }
+      .nav-links.is-open { display: flex; flex-direction: column; }
+      .nav-links a { padding: 11px 0; border-top: 1px solid rgba(28,47,70,.07); font-size: 13px; }
+      .hero { padding: 20px 0 42px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 30px; }
+      .hero-copy { padding: 29px 0 0; }
+      .hero h1 { max-width: 470px; margin: 17px 0; font-size: clamp(48px, 12vw, 66px); }
+      .hero-copy > p { font-size: 15px; }
+      .hero-visual { min-height: 330px; }
+      .image-note { padding: 11px 14px; }
+      .trust-inner { min-height: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 15px 18px; padding-block: 20px; }
+      .trust-item { gap: 9px; font-size: 10px; }
+      .about { padding: 76px 0; }
+      .about-grid, .difference-grid, .contact-grid { grid-template-columns: 1fr; gap: 28px; }
+      .about-aside h2, h2 { font-size: 39px; }
+      .services { padding: 75px 0; }
+      .section-heading { align-items: start; flex-direction: column; gap: 15px; margin-bottom: 30px; }
+      .section-heading > p { font-size: 13px; }
+      .service-grid { grid-template-columns: 1fr 1fr; }
+      .service { min-height: 190px; padding: 18px 14px; }
+      .service-number { margin-bottom: 21px; }
+      .service h3 { font-size: 18px; }
+      .service p { font-size: 11px; }
+      .difference { padding: 76px 0; }
+      .difference-grid { gap: 24px; }
+      .difference h2 { font-size: 39px; }
+      .contact { padding: 72px 0; }
+      .contact-grid { gap: 30px; }
+      .contact h2 { font-size: 39px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar" id="home">
+    <nav class="nav wrap" aria-label="Главна навигација">
+      <a class="brand" href="#home" aria-label="Почетна страница на Marija Stoleska">
+        <span class="brand-mark" aria-hidden="true">MS</span>
+        <span class="brand-name">Marija Stoleska<small>Сметководство и советување</small></span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="#home">Почетна</a>
+        <a href="#about">За нас</a>
+        <a href="#services">Услуги</a>
+        <a href="#why-us">Зошто да нè изберете</a>
+        <a href="#contact">Контакт</a>
+      </div>
+      <button class="menu-toggle" type="button" aria-label="Отвори навигација" aria-expanded="false" aria-controls="nav-links">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.6"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-grid wrap">
+        <div class="hero-copy">
+          <div class="eyebrow">Јасна слика за вашиот бизнис</div>
+          <h1 id="hero-title">Сигурност во секој <span>број.</span></h1>
+          <p>Внимателно сметководство и практични деловни совети за јасно и сигурно да ја донесете следната важна одлука.</p>
+          <div class="hero-actions">
+            <a class="button" href="#contact">Закажете консултација <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="#services">Погледнете ги услугите <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img class="hero-image" src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Деловни документи подготвени за преглед и обработка">
+          <div class="image-frame" aria-hidden="true"></div>
+          <div class="image-note"><b>01</b><span>Јасни бројки.<br>Промислен совет.</span></div>
+        </div>
+      </div>
+      <div class="trust-strip">
+        <div class="trust-inner wrap">
+          <div class="trust-item"><span class="trust-dot"></span>Личен и посветен пристап</div>
+          <div class="trust-item"><span class="trust-dot"></span>Сигурна поддршка за усогласеност</div>
+          <div class="trust-item"><span class="trust-dot"></span>Совети според вашите цели</div>
+          <div class="trust-item"><span class="trust-dot"></span>Поддршка во секоја фаза</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about wrap" id="about">
+      <div class="about-grid">
+        <div class="about-aside">
+          <div class="eyebrow">За нас</div>
+          <h2>Успешниот бизнис почнува со познавање на бројките.</h2>
+        </div>
+        <div class="about-copy">
+          <p>Водењето бизнис бара секојдневно носење важни одлуки. Вашето сметководство треба да ви помогне полесно да ги донесете, а не да ги прави посложени.</p>
+          <p>Marija Stoleska нуди сигурна сметководствена и советодавна поддршка приспособена на начинот на кој работите. Од уредна евиденција до планирање на следната фаза од растот, имате партнер кој вложува време за да го разбере вашиот бизнис.</p>
+          <p>Очекувајте прецизна работа, јасна комуникација и практични совети, со дискреција и внимание какви што заслужуваат вашите финансии.</p>
+          <div class="signature"><span class="signature-rule"></span><div><strong>Marija Stoleska</strong><small>Сметководство и деловно советување</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><div class="eyebrow">Нашите услуги</div><h2>Сè на свое место.</h2></div>
+          <p>Сигурно секојдневно сметководство, стручна поддршка за усогласеност и промислени совети, приспособени на вашиот бизнис.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service"><span class="service-number">01</span><h3>Сметководство и книговодство</h3><p>Прецизна евиденција, усогласување и тековно водење на сметките.</p></article>
+          <article class="service"><span class="service-number">02</span><h3>Обработка на плати</h3><p>Навремена пресметка на плати, платни листи и придонеси.</p></article>
+          <article class="service"><span class="service-number">03</span><h3>Даночно советување</h3><p>Практични даночни совети, подготовка и поддршка за вашите обврски.</p></article>
+          <article class="service"><span class="service-number">04</span><h3>ДДВ и даночни пријави</h3><p>Регистрација за ДДВ, подготовка и поднесување пријави и усогласување.</p></article>
+          <article class="service"><span class="service-number">05</span><h3>Финансиско известување</h3><p>Јасни финансиски извештаи и корисен увид во работењето на бизнисот.</p></article>
+          <article class="service"><span class="service-number">06</span><h3>Регистрација на фирма</h3><p>Насоки за основање бизнис и поддршка низ постапката за регистрација.</p></article>
+          <article class="service"><span class="service-number">07</span><h3>Деловно советување</h3><p>Планирање, буџетирање и поддршка при важни деловни одлуки.</p></article>
+          <article class="service"><span class="service-number">08</span><h3>Усогласеност и извештаи</h3><p>Поддршка за законски поднесоци, рокови и тековни обврски.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="difference" id="why-us">
+      <div class="difference-grid wrap">
+        <div>
+          <div class="eyebrow">Зошто да нè изберете</div>
+          <h2>Стручност на која можете да се потпрете. Личен пристап што ви е достапен.</h2>
+          <p class="difference-lead">Вашите финансии заслужуваат повеќе од разговор еднаш годишно. Добијте достапна поддршка што ги разбира деталите и ја гледа пошироката слика.</p>
+        </div>
+        <div class="reasons">
+          <article class="reason"><span class="reason-number">01</span><div><h3>Лично внимание</h3><p>Го разбираме вашиот бизнис во неговиот контекст и ја приспособуваме поддршката на вашите потреби и приоритети.</p></div></article>
+          <article class="reason"><span class="reason-number">02</span><div><h3>Јасно, без непотребен жаргон</h3><p>Сложените обврски и финансиски информации ги објаснуваме разбирливо за да можете да постапите сигурно.</p></div></article>
+          <article class="reason"><span class="reason-number">03</span><div><h3>Прецизна и сигурна работа</h3><p>Систематичното известување и проактивниот пристап помагаат важните обврски да бидат навреме исполнети.</p></div></article>
+          <article class="reason"><span class="reason-number">04</span><div><h3>Една доверлива контакт-личност</h3><p>Изградете постојан однос со професионалец кој ги познава вашите бројки и цели.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact-grid wrap">
+        <div class="contact-copy">
+          <div class="eyebrow">Контактирајте нè</div>
+          <h2>Да го направиме вашиот следен чекор појасен.</h2>
+          <p>Без разлика дали основате фирма, барате тековна сметководствена поддршка или имате конкретно прашање, започнете со разговор.</p>
+        </div>
+        <div>
+          <div class="contact-details">
+            <div class="contact-row"><span>Телефон</span><a href="tel:+38972309180">+389 72 309 180</a></div>
+            <div class="contact-row"><span>Е-пошта</span><a href="mailto:marijaicovska93@gmail.com">marijaicovska93@gmail.com</a></div>
+            <div class="contact-row"><span>Услуги</span><a href="#services">Сметководство и деловно советување</a></div>
+          </div>
+          <a class="button contact-action" href="mailto:marijaicovska93@gmail.com?subject=Консултација%20за%20сметководство">Испратете прашање <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner wrap">
+      <a class="footer-brand" href="#home">Marija Stoleska</a>
+      <small>Сметководство и деловно советување</small>
+      <small>© 2026 Marija Stoleska</small>
+      <a class="back-top" href="#home">На почеток ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', String(!isExpanded));
+      menuToggle.setAttribute('aria-label', isExpanded ? 'Отвори навигација' : 'Затвори навигација');
+      navLinks.classList.toggle('is-open', !isExpanded);
+    });
+
+    navLinks.addEventListener('click', (event) => {
+      if (event.target.closest('a')) {
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Отвори навигација');
+        navLinks.classList.remove('is-open');
+      }
+    });
+  </script>
+</body>
+</html>
